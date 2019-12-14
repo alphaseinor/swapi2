@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios'
-import PersonList from './components/PersonList.js'
+import PersonList from './components/Persons/PersonList.js'
 import ReactPaginate from './components/react-paginate'
 import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
@@ -10,7 +10,8 @@ function App() {
   const [data, setData] = useState([])
   const [numberOfPages, setNumberOfPages] = useState(1)
   const [currentPage] = useState(0) //reserved for pagination
-  const [apiKey, setApiKey] = useState(`${originalAPIKey}${currentPage +1}`)
+  const [searchText, setSearchText] = useState('')
+  const [apiKey, setApiKey] = useState(`${originalAPIKey}${currentPage +1}&${searchText}`)
 
   useEffect(()=>{
     axios.get(apiKey)
@@ -42,16 +43,7 @@ function App() {
           onPageChange={clickHandler}
           forcePage={currentPage}
         />
-        {
-          data.map((dataPerson, i) => {
-            return(
-              <PersonList
-                key={i} 
-                person={dataPerson} 
-              />
-            )
-          })
-        }
+        <PersonList data={data} />
       </Box>
     </Container>
   );

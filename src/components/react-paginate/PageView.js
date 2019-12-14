@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Button from '@material-ui/core/Button'
 
 const PageView = props => {
-  console.log(props)
+  //console.log(props)
   let pageClassName = props.pageClassName;
   let pageLinkClassName = props.pageLinkClassName;
 
