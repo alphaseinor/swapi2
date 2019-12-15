@@ -1,9 +1,9 @@
-import React, {useState} from 'react'
+import React from 'react'
 import Box from '@material-ui/core/Box'
 import TextField from '@material-ui/core/TextField';
 
 const NavBar = (props) => {
-  console.log(props)
+  //console.log(props)
   return (
     <Box>
       <form 
@@ -20,7 +20,7 @@ const NavBar = (props) => {
             props.setSearchText(e.target.value)
           }}
           id="filled-search" 
-          label="Search field" 
+          label="Search" 
           type="search" 
           variant="filled" 
           value={props.searchText}

@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 import PageView from './PageView';
 import BreakView from './BreakView';
 import Button from '@material-ui/core/Button'
-import ButtonGroup from '@material-ui/core/ButtonGroup'
 
 export default class PaginationBoxView extends Component {  
   static propTypes = {

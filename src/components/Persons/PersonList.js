@@ -11,7 +11,11 @@ const PersonList = (props) => {
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
+        <ListSubheader 
+          component="div"
+          id="nested-list-subheader"
+          disableSticky={true}
+        >
           Star Wars Major Characters List
         </ListSubheader>
       }
