@@ -39,6 +39,7 @@ const PageView = props => {
 
   return (
       <Button
+        size="small"
         onClick={onClick}
         href={href}
         aria-label={ariaLabel}

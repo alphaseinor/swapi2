@@ -46,6 +46,12 @@ function App() {
       </Box>
       <Box>
         <PersonList data={data} />
+      </Box>
+      <Box 
+        display="flex"
+        justifyContent="center"
+        wrap="wrap"
+      >
         <ReactPaginate 
           previousLabel={"←"}
           nextLabel={"→"}
