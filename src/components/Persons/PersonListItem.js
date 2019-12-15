@@ -23,7 +23,7 @@ const PersonListItem = (props) => {
       </ListItem>
       <Collapse in={open} timeout="auto" unmountOnExit>
         <List>
-          <ListItem button>
+          <ListItem>
             <ListItemText primary={`gender: ${props.person.gender}`}/>
           </ListItem>
           <ListItem>

@@ -1,5 +1,6 @@
-import React, {useState, useEffect} from 'react';
+import React, {useState, useEffect} from 'react'
 import axios from 'axios'
+import NavBar from './components/NavBar/NavBar.js'
 import PersonList from './components/Persons/PersonList.js'
 import ReactPaginate from './components/react-paginate'
 import Container from '@material-ui/core/Container'
@@ -11,7 +12,7 @@ function App() {
   const [numberOfPages, setNumberOfPages] = useState(1)
   const [currentPage] = useState(0) //reserved for pagination
   const [searchText, setSearchText] = useState('')
-  const [apiKey, setApiKey] = useState(`${originalAPIKey}${currentPage +1}&${searchText}`)
+  const [apiKey, setApiKey] = useState(`${originalAPIKey}${currentPage +1}&search=${searchText}`)
 
   useEffect(()=>{
     axios.get(apiKey)
@@ -28,22 +29,31 @@ function App() {
 
   const clickHandler = (data) => {
     console.log(data)
-    setApiKey(originalAPIKey + (data.selected +1))
+    setApiKey(`${originalAPIKey}${data.selected +1}&search=${searchText}`)
     console.log(apiKey)
   }
 
   return (
     <Container maxWidth="sm">
       <Box>
+        <NavBar 
+          searchText={searchText} 
+          setSearchText={setSearchText} 
+          originalAPIKey = {originalAPIKey}
+          currentPage = {currentPage}
+          setApiKey = {setApiKey}
+        />
+      </Box>
+      <Box>
+        <PersonList data={data} />
         <ReactPaginate 
-          previousLabel={"← Previous"}
-          nextLabel={"Next →"}
+          previousLabel={"←"}
+          nextLabel={"→"}
           breakLabel={<span className="gap">...</span>}
           pageCount={numberOfPages}
           onPageChange={clickHandler}
           forcePage={currentPage}
         />
-        <PersonList data={data} />
       </Box>
     </Container>
   );
