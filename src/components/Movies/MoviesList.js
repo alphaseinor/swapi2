@@ -10,7 +10,11 @@ const MoviesList = (props) => {
       component="nav"
       aria-labelledby="nested-list-subheader"
       subheader={
-        <ListSubheader component="div" id="nested-list-subheader">
+        <ListSubheader 
+          component="div" 
+          id="nested-list-subheader"
+          disableSticky={true}
+        >
           Appears in {props.films.length} films
         </ListSubheader>
       }
@@ -20,7 +24,7 @@ const MoviesList = (props) => {
           (filmData, i) => {
             return(
                 <MoviesListItem
-                  key={i} 
+                  key={i}
                   film={filmData} 
                 />
             )
