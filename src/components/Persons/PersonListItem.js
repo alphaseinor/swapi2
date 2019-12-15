@@ -7,8 +7,11 @@ import ExpandLess from '@material-ui/icons/ExpandLess';
 import ExpandMore from '@material-ui/icons/ExpandMore';
 import Divider from '@material-ui/core/Divider';
 
+import MoviesList from '../Movies/MoviesList.js'
+
 
 const PersonListItem = (props) => {
+  //console.log(props.person.films.length)
   const [open, setOpen] = useState(false)
 
   const clickHandler = () => {
@@ -44,9 +47,7 @@ const PersonListItem = (props) => {
           <ListItem>
             <ListItemText primary={`Skin Color: ${props.person.skin_color}`}/>
           </ListItem>
-          <ListItem>
-            <ListItemText primary={`Appears in ${props.person.films.length} films`}/>
-          </ListItem>
+          <MoviesList films={props.person.films} />
         </List>
       </Collapse>
       <Divider />
