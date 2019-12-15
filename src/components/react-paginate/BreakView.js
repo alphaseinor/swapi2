@@ -7,6 +7,7 @@ const BreakView = props => {
 
   return (
       <Button
+        size="small"
         onClick={onClick}
         onKeyPress={onClick}
       >

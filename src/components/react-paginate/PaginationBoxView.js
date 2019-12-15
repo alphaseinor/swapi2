@@ -311,7 +311,7 @@ export default class PaginationBoxView extends Component {
     const nextAriaDisabled = selected === pageCount - 1 ? true : false;
 
     return (
-      <ButtonGroup variant="contained" size="small" aria-label="small contained button group">
+      <div>
         <Button
           onClick={this.handlePreviousPage}
           disabled={previousAriaDisabled}
@@ -331,7 +331,7 @@ export default class PaginationBoxView extends Component {
         >
           {nextLabel}
         </Button>
-      </ButtonGroup>
+      </div>
     );
   }
 }
