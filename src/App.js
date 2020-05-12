@@ -7,7 +7,7 @@ import Container from '@material-ui/core/Container'
 import Box from '@material-ui/core/Box'
 
 function App() {
-  const originalAPIKey = 'https://swapi.co/api/people/?page='
+  const originalAPIKey = 'https://swapi.dev/api/people/?page='
   const [data, setData] = useState([])
   const [numberOfPages, setNumberOfPages] = useState(1)
   const [currentPage] = useState(0) //reserved for pagination
